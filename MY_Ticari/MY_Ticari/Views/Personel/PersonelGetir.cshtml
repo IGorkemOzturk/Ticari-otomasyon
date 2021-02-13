@@ -1,0 +1,35 @@
+﻿@model MY_Ticari.Models.Siniflar.Personel
+@{
+    ViewBag.Title = "PersonelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("PersonelGuncelle", "Personel", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.PersonelID)
+
+        @Html.LabelFor(x => x.PersonelAd)
+        @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersonelSoyad)
+        @Html.TextBoxFor(x => x.PersonelSoyad, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.PersoelGorsel)
+        @*@Html.TextBoxFor(x => x.PersoelGorsel, new { @class = "form-control" })*@
+        <br />
+        <input type="file" name="PersoelGorsel" />
+        <br />
+        <br />
+        <br />
+        @Html.LabelFor(x => x.Departman)
+        @Html.DropDownListFor(x => x.DepartmanID, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+        <br />
+
+
+    </div>
+
+    <button class="btn btn-default" style="background-color:cadetblue">Güncelle</button>
+
+
+}

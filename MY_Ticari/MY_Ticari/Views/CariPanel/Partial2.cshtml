@@ -1,0 +1,55 @@
+﻿@using MY_Ticari.Models.Siniflar
+@model List<Mesajlar>
+
+
+    <div class="timeline timeline-inverse">
+
+        <!-- timeline time label -->
+        <!--Bir liste oluşturdum-->
+        @{ List<string> tarih = new List<string>();}
+
+        @foreach (var x in Model)
+        {
+            <!--stringe tarihi atadım-->
+            string tar = x.Tarih.ToString("dd/MM/yyyy");
+            <!--tarih listem bu tarihi içermiyor ise bu divi ekle -->
+            if (!tarih.Contains(tar))
+            {
+
+                <div class="time-label">
+
+                    <span class="bg-danger">
+                        @x.Tarih.ToString("dd/MM/yyyy")
+
+                    </span>
+
+                </div>
+
+                <!--tarihi listeye ekle-->
+                tarih.Add(tar);
+            }
+
+            <!-- /.timeline-label -->
+            <!-- timeline item -->
+
+            <div>
+
+                <i class="fas fa-envelope bg-primary"></i>
+
+
+                <div class="timeline-item">
+
+                    <span class="time"><i class="far fa-clock"></i> @x.Tarih.ToString("dd/MM/yyyy HH:mm")</span>
+
+                    <h3 class="timeline-header"><a href="#">Yayınlayan: </a> @x.Gonderici | <a href="#">Konu: </a> @x.Konu</h3>
+
+                    <div class="timeline-body">@x.Icerik</div>
+
+                </div>
+
+            </div>
+        }
+        <div>
+            <i class="far fa-clock bg-gray"></i>
+        </div>
+    </div>

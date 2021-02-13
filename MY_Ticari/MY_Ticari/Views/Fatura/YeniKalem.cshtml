@@ -1,0 +1,29 @@
+﻿@model MY_Ticari.Models.Siniflar.FaturaKalem
+@{
+    ViewBag.Title = "YeniKalem";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>YeniKalem</h2>
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Miktar)
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BirimFiyat)
+    @Html.TextBoxFor(x => x.BirimFiyat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tutar)
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })
+    <br /> 
+    @Html.LabelFor(x => x.FaturaID)
+    @Html.TextBoxFor(x => x.FaturaID, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-primary">Ekle</button>
+</form>

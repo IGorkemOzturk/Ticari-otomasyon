@@ -1,0 +1,27 @@
+﻿@model MY_Ticari.Models.Siniflar.Kategori
+
+@{
+    ViewBag.Title = "KategoriEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+<br />
+<h2>Yeni Kategori Ekle</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.KategoriAd)
+    <br />
+
+    @Html.TextBoxFor(x => x.KategoriAd, new { @class = "form-Control" })
+
+    <br />
+    <br />
+    <button class="btn btn-info" id="Btn1">Kaydet</button>
+    <script>
+        $('#Btn1').click(function () {
+            alert("Kategori başarılı bir şekilde eklendi.")
+        });
+    </script>
+</form>
+

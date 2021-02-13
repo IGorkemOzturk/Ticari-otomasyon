@@ -1,0 +1,36 @@
+﻿@using MY_Ticari.Models.Siniflar;
+@model List<Personel>
+@{
+    ViewBag.Title = "DepartmanDetay";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>DepartmanDetay Sayfası</h2>
+<br />
+
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">@ViewBag.d Departmanındaki Personeller</li>
+</ol>
+
+<table class="table table-hover">
+
+    <tr>
+
+        <th>Ad</th>
+        <th>Soyad</th>
+
+        <th>Satışlar</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.PersonelAd</td>
+            <td>@x.PersonelSoyad</td>
+
+            <td><a href="/Departman/DepartmanPersonelSatis/@x.PersonelID" class="btn btn-default" style="background-color:crimson">Satışlar</a></td>
+        </tr>
+    }
+</table>

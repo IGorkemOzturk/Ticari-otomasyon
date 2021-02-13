@@ -1,0 +1,28 @@
+﻿@using MY_Ticari.Models.Siniflar
+@model List<KargoTakip>
+@{
+    ViewBag.Title = "CariKargoTakip";
+    Layout = "~/Views/Shared/_CariLayout.cshtml";
+}
+
+
+<h2>KargoTakip</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Sıra</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+
+    </tr>
+    @{ int sayac=0;}
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@{sayac++;} @sayac</td>
+            <td>@x.Aciklama</td>
+            <td>@x.TarihZaman.ToString("dd/mm/yyyy")</td>
+
+        </tr>
+    }
+</table>
