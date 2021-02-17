@@ -145,7 +145,6 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FaturaController.cs" />
     <Compile Include="Controllers\GaleriController.cs" />
-    <Compile Include="Controllers\gitController.cs" />
     <Compile Include="Controllers\GrafikController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KargoController.cs" />
@@ -2964,7 +2963,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Deneme\" />
-    <Folder Include="Views\git\" />
     <Folder Include="Views\Mesaj\" />
   </ItemGroup>
   <ItemGroup>
